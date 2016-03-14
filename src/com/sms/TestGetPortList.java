@@ -1,9 +1,7 @@
 package com.sms;
-import java.util.Enumeration;  
-  
-import javax.comm.CommDriver;  
-import javax.comm.CommPortIdentifier;  
-import javax.comm.SerialPort;  
+import java.util.Enumeration;
+
+import gnu.io.*;
   
 /** 
  *  
@@ -36,7 +34,7 @@ public class TestGetPortList {
             System.loadLibrary("win32com");  
             System.out.println(libname + " Library Loaded");  
   
-            commDriver = (javax.comm.CommDriver) Class.forName(driverName)  
+            commDriver = (CommDriver) Class.forName(driverName)  
                     .newInstance();  
             commDriver.initialize();  
             System.out.println("comm Driver Initialized");  
